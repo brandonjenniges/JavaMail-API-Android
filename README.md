@@ -49,3 +49,7 @@ android {
 Known issues
 --------------
 - Doesn't work with Gmail accounts that use Two-factor authentication
+
+License
+--------------
+https://java.net/projects/javamail/pages/License
