@@ -36,8 +36,8 @@ android {
  }
  
  dependencies {
-     compile 'com.sun.mail:android-mail:1.5.5-SNAPSHOT'
-     compile 'com.sun.mail:android-activation:1.5.5-SNAPSHOT'
+     compile 'com.sun.mail:android-mail:1.5.5'
+     compile 'com.sun.mail:android-activation:1.5.5'
  }
  ```
  Add Internet permission to AndroidManifest.xml
