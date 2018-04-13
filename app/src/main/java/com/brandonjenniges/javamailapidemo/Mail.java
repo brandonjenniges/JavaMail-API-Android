@@ -28,6 +28,8 @@ public class Mail extends javax.mail.Authenticator {
     private String[] _to;
     private String _from;
 
+    private String[] _reply_to;
+    
     private String _port;
     private String _sport;
 
@@ -98,6 +100,14 @@ public class Mail extends javax.mail.Authenticator {
             msg.setSubject(_subject);
             msg.setSentDate(new Date());
 
+            InternetAddress[] replyTo = new InternetAddress[_reply_to.length];
+            for (int i = 0; i < _reply_to.length; i++) {
+                replyTo[i] = new InternetAddress(_reply_to[i]);
+            }
+            if (_reply_to.length >0){
+                msg.setReplyTo(replyTo);
+            }
+            
             // setup message body
             BodyPart messageBodyPart = new MimeBodyPart();
             messageBodyPart.setText(_body);
@@ -248,4 +258,12 @@ public class Mail extends javax.mail.Authenticator {
     public void set_multipart(Multipart _multipart) {
         this._multipart = _multipart;
     }
+    
+    public String[] get_reply_to() {
+        return _reply_to;
+    }
+
+    public void set_reply_to(String[] _reply_to) {
+        this._reply_to = _reply_to;
+    }    
 }
